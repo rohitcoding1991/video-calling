@@ -7,7 +7,7 @@ interface Position {
   y: number;
 }
 
-interface DraggableProps extends Omit<React.ComponentProps<'div'>, 'onClick'> {
+interface DraggableProps extends Omit<React.ComponentProps<'div'>, 'onClick' | 'onDragStart' | 'onDragEnd'> {
   /** Default position. If not set, defaults to 16px from top-right of parent. */
   defaultPosition?: Position;
   /** Z-index for the draggable wrapper */

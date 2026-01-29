@@ -1,11 +1,13 @@
-import { io, Socket } from 'socket.io-client';
+import { io, Socket } from "socket.io-client";
 
 // Singleton socket instance
 let socket: Socket | null = null;
 
 export const getSocket = (): Socket => {
   if (!socket) {
-    socket = io('http://localhost:3001', {
+    const backendUrl =
+      import.meta.env.VITE_BACKEND_URL || "http://localhost:3001";
+    socket = io(backendUrl, {
       autoConnect: false,
     });
   }
