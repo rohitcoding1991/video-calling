@@ -1,6 +1,6 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 import { Socket } from 'socket.io-client';
-import { connectSocket, disconnectSocket, getSocket } from '@/lib/socket';
+import { connectSocket, disconnectSocket } from '@/lib/socket';
 
 interface User {
   id: string;
